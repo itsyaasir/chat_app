@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chat App</title>
+
+    <!-- Tailwind -->
+
+    <style>
+      :root {
+        font-size: 18px;
+      }
+
+      input[type='text'] {
+        font-size: inherit;
+      }
+
+      #log {
+        width: 30em;
+        height: 20em;
+        overflow: auto;
+        margin: 0.5em 0;
+        border: 1px solid black;
+      }
+
+      #status {
+        padding: 0 0.2em;
+      }
+
+      #url,
+      #text {
+        width: 17em;
+        padding: 0.5em;
+      }
+
+      .msg {
+        margin: 0;
+        padding: 0.25em 0.5em;
+      }
+
+      .msg--status {
+        background-color: #ffffc9;
+      }
+
+      .msg--message {
+        background-color: #d2f4ff;
+      }
+
+      .msg--error {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Chat Client</h2>
+    <form id="urlform">
+      <label for="url">usage: click submit and then click connect</label>
+      <br />
+      <input type="text" id="url" value="ws://127.0.0.1:8080" />
+      <input type="submit" />
+    </form>
+
+    <div>
+      <span>Status:</span>
+      <span id="status">Disconnected</span>
+      <button id="connect">Connect</button>
+    </div>
+
+    <div id="log"></div>
+
+    <form id="chatform">
+      <label for="text"></label>
+      <input type="text" id="text" />
+      <input type="submit" id="send" />
+    </form>
+
+    <script src="./chat.js"></script>
+  </body>
+</html>
